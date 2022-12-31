@@ -1,0 +1,19 @@
+.list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.card-api {
+  cursor: pointer;
+}
+
+.img-api {
+  transition: all 0.5s;
+}
+
+.card-api:hover > .img-api {
+  transform: scale(1.05);
+}
