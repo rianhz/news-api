@@ -1,11 +1,16 @@
 .list {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 25px;
 }
 
+h1 {
+  padding: 20px 0 10px 0;
+  background-color: rgb(120, 101, 101);
+  text-align: center;
+}
 .card-api {
   cursor: pointer;
 }
@@ -14,6 +19,6 @@
   transition: all 0.5s;
 }
 
-.card-api:hover > .img-api {
+.card-api .img-api:hover {
   transform: scale(1.05);
 }

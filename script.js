@@ -17,9 +17,18 @@ const initialPromise = (url) => {
     }
   });
 };
-window.addEventListener('onload', fetchAll(urlApi));
+window.addEventListener('load', fetchAll(urlApi));
 
 searchInput.addEventListener('input', changeUrl);
+
+function fetchAll(url) {
+  initialPromise(url)
+    .then((data) => {
+      console.log(data);
+      list.innerHTML = tempalateUI(data);
+    })
+    .catch((error) => (list.innerHTML = error));
+}
 
 function changeUrl(inputText) {
   let textUrl = inputText.target.value;
@@ -30,15 +39,6 @@ function changeUrl(inputText) {
     fetchAll(urlApi);
   }
   console.log(textUrl);
-}
-
-function fetchAll(url) {
-  initialPromise(url)
-    .then((data) => {
-      console.log(data);
-      list.innerHTML = tempalateUI(data);
-    })
-    .catch((error) => (list.innerHTML = error));
 }
 
 function tempalateUI(e) {
