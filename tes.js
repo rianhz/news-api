@@ -16,7 +16,6 @@ function fetchData(url) {
   return fetch(url)
     .then((data) => data.json())
     .then((data) => data.articles)
-    .catch((err) => (list.innerHTML = err))
     .finally((spinner.style.display = 'none'));
 }
 
